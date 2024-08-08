@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #2bff00;
+    font-family: Arial, sans-serif;
+}
+
+button.sliding-background {
+border-radius: 5px;    padding: 15px 30px;
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #00ffee;
+    cursor: pointer;
+    font-weight: 700;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: color 0.4s;
+}
+
+button.sliding-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #00ffee;
+    transition: left 1s;
+    z-index: -1;
+}
+
+button.sliding-background:hover::before {
+    left: 0;
+}
+
+button.sliding-background:hover {
+    color: rgb(0, 0, 0);
+}
